@@ -49,6 +49,8 @@ def checkFollow(from_user,target_user):
     time.sleep(4)
     # driver.save_screenshot("checkFollow.png")
     print(driver.current_url)
+    if "login" in driver.current_url:
+        return "PLEASE_CONFIG_AUTH"
     twitter_usernames = re.findall(r'>@(\w+)<', driver.page_source)
     twitter_usernames  = set(twitter_usernames)
     if target_user in twitter_usernames:
@@ -63,6 +65,8 @@ def checkRepost(from_user,target_post_id):
     time.sleep(4)
     # driver.save_screenshot("checkRepost.png")
     print(driver.current_url)
+    if "login" in driver.current_url:
+        return "PLEASE_CONFIG_AUTH"
     if target_post_id in driver.page_source:
         return True
     return False
