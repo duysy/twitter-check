@@ -9,6 +9,7 @@ services:
     command: "python -u tool-twitter.py"
     depends_on:
       - chrome
+      - flask
     networks:
       - tool-auto
     restart: always
