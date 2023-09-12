@@ -25,6 +25,24 @@ services:
       - tool-auto
     restart: always
 
+  flask:
+    environment:
+      - TELEGRAM_BOT_API=
+      - DISCORD_BOT_API=
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 5000:5000
+    command: "gunicorn -b 0.0.0.0:5000 server:app"
+    expose:
+      - 5000
+    networks:
+      - tool-auto
+    restart: always
+
 networks:
   tool-auto:
     driver: bridge

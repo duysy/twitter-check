@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import json
-BASE_SERVER_URL = "http://139.180.140.72/"
+BASE_SERVER_URL = "http://flask:5000/"
 
 options = webdriver.ChromeOptions()
 options.add_argument('--verbose')
