@@ -101,4 +101,4 @@ while True:
             'Content-Type': 'application/json'
             }
             response = requests.request("POST", url, headers=headers, data=payload)
-    time.sleep(3)
+    time.sleep(1)
