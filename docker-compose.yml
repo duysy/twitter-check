@@ -29,10 +29,6 @@ services:
     restart: always
 
   flask:
-    environment:
-      - TELEGRAM_BOT_API=
-      - DISCORD_BOT_API=
-      - ENV PYTHONUNBUFFERED 1
     build:
       context: .
       dockerfile: Dockerfile
