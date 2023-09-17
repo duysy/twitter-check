@@ -20,7 +20,8 @@ services:
       - 4444:4444
     environment:
       - SE_NODE_MAX_SESSIONS=10
-      - SE_NODE_SESSION_TIMEOUT=1000
+      - SE_NODE_SESSION_TIMEOUT=5000
+      - SE_SESSION_REQUEST_TIMEOUT=31536000
     expose:
       - 4444
     networks:
@@ -31,6 +32,7 @@ services:
     environment:
       - TELEGRAM_BOT_API=
       - DISCORD_BOT_API=
+      - ENV PYTHONUNBUFFERED 1
     build:
       context: .
       dockerfile: Dockerfile
